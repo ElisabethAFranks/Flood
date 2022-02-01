@@ -5,12 +5,21 @@
 geographical data.
 
 """
-from haversine import haversine, Unit
+from haversine import haversine
+
 p = (0.,0.)
-stationanddistance = []
 def stations_by_distance(stations, p):
+    stationanddistance = []
     for station in stations: 
-        distance = float(haversine(p,station.coordinate, unit=Unit.km))
+        distance = float(haversine(p,station.coordinate))
         stationanddistance.append(station.name,distance)
     utils.sort_by_key(stationanddistance)
     return stationanddistance
+
+def rivers_with_station(stations):
+    riverandstation = []
+    for station in stations:
+        if station.river == True:
+            riverandstation.append(station.river)
+        else:
+            continue
