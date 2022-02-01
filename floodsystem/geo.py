@@ -26,4 +26,6 @@ def rivers_with_station(stations):
     return riverandstation
 
 def stations_by_river(stations):
-    print("Hello")
+    stationandriver = {}
+    for rivers in riverandstation:
+        continue
