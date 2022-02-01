@@ -19,7 +19,11 @@ def stations_by_distance(stations, p):
 def rivers_with_station(stations):
     riverandstation = []
     for station in stations:
-        if station.river == True:
+        if station.river == True and station.river in riverandstation == False:
             riverandstation.append(station.river)
         else:
             continue
+    return riverandstation
+
+def stations_by_river(stations):
+    print("Hello")
