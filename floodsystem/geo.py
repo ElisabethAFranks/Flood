@@ -12,4 +12,5 @@ def stations_by_distance(stations, p):
     for station in stations: 
         distance = float(haversine(p,station.coordinate, unit=Unit.km))
         stationanddistance.append(station.name,distance)
+    utils.sort_by_key(stationanddistance)
     return stationanddistance
