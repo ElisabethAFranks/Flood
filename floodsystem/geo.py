@@ -38,6 +38,6 @@ def stations_by_river(stations):
         else:
             stationandriver[station.river] = list(stationandriver[station.river]) + [station.name]
     for station in stationandriver:
-        stationandriver[station] = sorter(stationandriver[station])
+        stationandriver[station] = sorted(stationandriver[station])
         riverandstation = rivers_with_station(stations)
     return riverandstation
