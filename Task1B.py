@@ -7,8 +7,6 @@ def run():
 
     # Build list of stations
     stations = build_station_list()
-
-    # Returns list of stations and their distance from p
     p = (52.2053,0.1218)
     
      # Returns list of closest ten stations
