@@ -25,7 +25,7 @@ def test_stations_by_distance():
     assert len(geo.stations_by_distance(stations, (0,0))) > 0
     assert round(geo.stations_by_distance(Test_station, (0,0))[0,2])==16
 
-def test_rivers_wtih_station():
+def test_rivers_with_station():
     assert len(geo.rivers_with_station (stations)) > 0
     assert geo.rivers_with_station(Test_station) == ['River_test']
 
@@ -33,3 +33,18 @@ def test_stations_by_river():
     assert len(geo.stations_by_river(stations)) > 0
     assert len(geo.stations_by_river(stations)['River Thames']) > 10
     assert geo.stations_by_river(Test_station) == {'River_test': ['test_station', 'test_station_2']}
+
+
+def test_stations_within_radius():
+    #1C
+    assert len(geo.stations_within_radius(stations, (52.2053, 0.1218), 0)) == 0
+    assert len(geo.stations_within_radius(stations, (52.2053, 0.1218), 10)) > 0
+    assert len(geo.stations_within_radius(stations, (52.2053, 0.1218), 500)) > len(geo.stations_within_radius(stations, (52.2053, 0.1218), 2))
+
+def test_rivers_by_station_number():
+    #1E
+    test_list = geo.rivers_by_station_number(stations, 10)
+    assert test_list[0][1] >= test_list[1][1]
+    assert test_list[0][0] == 'River Thames'
+
+    
