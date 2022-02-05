@@ -5,7 +5,7 @@
 geographical data.
 
 """
-from haversine import haversine
+import haversine
 from utils import sorted_by_key
 from station import MonitoringStation
 
