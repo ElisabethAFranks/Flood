@@ -47,8 +47,9 @@ class MonitoringStation:
             return False
         else:
             return True
-    
-    def inconsistent_typical_range_stations(stations):
+
+
+def inconsistent_typical_range_stations(stations):
         """function returns a list of stations which have inconsistent data"""
         erroneous_stations = []
         for station in stations:

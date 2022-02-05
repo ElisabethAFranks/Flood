@@ -18,3 +18,7 @@ def run():
 
     riversandstations = geo.stations_by_river(stations)
     print(riversandstations["River Thames"])
+
+if __name__ == "__main__":
+    print("*** Task 1D: CUED Part IA Flood Warning System ***")
+    run()

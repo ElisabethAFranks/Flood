@@ -14,3 +14,7 @@ def run():
 
      # Returns list of furthest ten stations
     print(geo.stations_by_distance(stations[-10:]))
+
+if __name__ == "__main__":
+    print("*** Task 1B: CUED Part IA Flood Warning System ***")
+    run()
