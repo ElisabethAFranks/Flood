@@ -7,7 +7,7 @@ geographical data.
 """
 import haversine
 from floodsystem.utils import sorted_by_key
-from station import MonitoringStation
+from floodsystem.station import MonitoringStation
 
 def stations_by_distance(stations, p):
     """function which returns a tuple of the station's name and the station's distance from point p"""
