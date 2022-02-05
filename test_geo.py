@@ -1,7 +1,7 @@
 import floodsystem.geo as geo
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.station import MonitoringStation
-from haversine import haversine
+import haversine
 from floodsystem.utils import sorted_by_key
 stations = build_station_list()
 
