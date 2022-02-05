@@ -26,7 +26,7 @@ def test_stations_by_distance():
     assert round(geo.stations_by_distance(Test_station, (0,0))[0,2])==16
 
 def test_rivers_wtih_station():
-    assert len(geo.rivers_with_station (stations, (0,0))) > 0
+    assert len(geo.rivers_with_station (stations)) > 0
     assert geo.rivers_with_station(Test_station) == ['River_test']
 
 def test_stations_by_river():
