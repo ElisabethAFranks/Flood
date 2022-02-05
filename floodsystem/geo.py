@@ -6,7 +6,7 @@ geographical data.
 
 """
 import haversine
-from utils import sorted_by_key
+from floodsystem.utils import sorted_by_key
 from station import MonitoringStation
 
 def stations_by_distance(stations, p):
