@@ -5,7 +5,7 @@
 geographical data.
 
 """
-import haversine
+from haversine import haversine
 from floodsystem.utils import sorted_by_key
 from floodsystem.station import MonitoringStation
 
