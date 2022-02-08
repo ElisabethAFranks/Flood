@@ -7,13 +7,14 @@ def run():
 
     # Build list of stations
     stations = build_station_list()
-    p = (52.2053,0.1218)
     
      # Returns list of closest ten stations
-    print(geo.stations_by_distance(stations[:10]))
+    print("The closest ten stations are:")
+    print(geo.stations_by_distance(stations, (52.2053, 0.1218))[:10])
 
      # Returns list of furthest ten stations
-    print(geo.stations_by_distance(stations[-10:]))
+    print("The furthest ten stations are:")
+    print(geo.stations_by_distance(stations, (52.2053, 0.1218))[-10:])
 
 if __name__ == "__main__":
     print("*** Task 1B: CUED Part IA Flood Warning System ***")

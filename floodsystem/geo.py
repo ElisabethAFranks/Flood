@@ -5,32 +5,28 @@
 geographical data.
 
 """
-import haversine
 from floodsystem.utils import sorted_by_key
 from floodsystem.station import MonitoringStation
+import numpy as np
 
 def stations_by_distance(stations, p):
     """function which returns a tuple of the station's name and the station's distance from point p"""
-    stationanddistance = []
-    for station in stations: 
-        distance = float(haversine(p,station.coord))
-        stationanddistance.append(station.name,distance)
-    stationanddistance = sorted([(station.name, station.town, distance[i]) for i, station in enumerate(stations)], key = lambda x:x[2])
+    positions = np.array([station.coord for station in stations])
+    distanceToP = 2 * 6371 * np.arcsin(np.sqrt((np.sin((np.deg2rad(p[0] - positions[:,0]))/2))**2 + np.cos(np.deg2rad(positions[:,0])) * np.cos(np.deg2rad(p[0])) * (np.sin((np.deg2rad(p[1] - positions[:,1]))/2))**2))
+    stationanddistance = sorted([(station, distanceToP[i]) for i, station in enumerate(stations)], key = lambda x:x[1])
     return stationanddistance
 
 def rivers_with_station(stations):
     """function which returns a list of rivers which have a monitoring station"""
-    riverandstation = []
+    riverandstation = set()
     for station in stations:
-        if station.river == True and station.river in riverandstation == False:
-            riverandstation.append(station.river)
-        else:
-            continue
+        riverandstation.add(station.river)
     riverandstation = sorted(riverandstation)
     return riverandstation
 
 def stations_by_river(stations):
     """function which returns a dictionary of rivers and a list of the stations on the river"""
+    riverandstation = set(rivers_with_station(stations))
     stationandriver = {}
     for station in stations:
         if not station.river in stationandriver:
@@ -39,8 +35,7 @@ def stations_by_river(stations):
             stationandriver[station.river] = list(stationandriver[station.river]) + [station.name]
     for station in stationandriver:
         stationandriver[station] = sorted(stationandriver[station])
-        riverandstation = rivers_with_station(stations)
-    return riverandstation
+    return stationandriver
 
 
 def stations_within_radius(stations, centre, r):
