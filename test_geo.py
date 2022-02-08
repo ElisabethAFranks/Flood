@@ -22,11 +22,11 @@ Test_station = [MonitoringStation(
     town = 'test_town')]
 
 def test_stations_by_distance():
-    assert len(geo.stations_by_distance(stations, (0,0))) > 0
+    assert len(geo.stations_by_distance(stations,(0,0))) > 0
     assert round(geo.stations_by_distance(Test_station, (0,0))[0][1])==16
-"""or 2???"""
+
 def test_rivers_with_station():
-    assert len(geo.rivers_with_station (stations)) > 0
+    assert len(geo.rivers_with_station(stations)) > 0
     assert geo.rivers_with_station(Test_station) == ['River_test']
 
 def test_stations_by_river():

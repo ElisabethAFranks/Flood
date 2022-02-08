@@ -18,17 +18,15 @@ def stations_by_distance(stations, p):
 
 def rivers_with_station(stations):
     """function which returns a list of rivers which have a monitoring station"""
-    riverandstation = []
+    riverandstation = set()
     for station in stations:
-        if station.river == True and station.river in riverandstation == False:
-            riverandstation.append(station.river)
-        else:
-            continue
+        riverandstation.add(station.river)
     riverandstation = sorted(riverandstation)
     return riverandstation
 
 def stations_by_river(stations):
     """function which returns a dictionary of rivers and a list of the stations on the river"""
+    riverandstation = set(rivers_with_stations(stations))
     stationandriver = {}
     for station in stations:
         if not station.river in stationandriver:
@@ -37,7 +35,6 @@ def stations_by_river(stations):
             stationandriver[station.river] = list(stationandriver[station.river]) + [station.name]
     for station in stationandriver:
         stationandriver[station] = sorted(stationandriver[station])
-        riverandstation = rivers_with_station(stations)
     return riverandstation
 
 
