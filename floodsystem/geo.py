@@ -15,7 +15,7 @@ def stations_by_distance(stations, p):
     stationanddistance = []
     parray=np.asarray(p)
     for station in stations: 
-        distance = float(haversine(p,station.coord()))
+        distance = float(haversine(parray,station.coord()))
         stationanddistance.append(station.name,distance)
     stationanddistance = sorted([(station.name, station.town, distance[i]) for i, station in enumerate(stations)], key = lambda x:x[2])
     return stationanddistance
