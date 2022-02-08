@@ -26,7 +26,7 @@ def rivers_with_station(stations):
 
 def stations_by_river(stations):
     """function which returns a dictionary of rivers and a list of the stations on the river"""
-    riverandstation = set(rivers_with_stations(stations))
+    riverandstation = set(rivers_with_station(stations))
     stationandriver = {}
     for station in stations:
         if not station.river in stationandriver:
