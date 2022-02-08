@@ -35,7 +35,7 @@ def stations_by_river(stations):
             stationandriver[station.river] = list(stationandriver[station.river]) + [station.name]
     for station in stationandriver:
         stationandriver[station] = sorted(stationandriver[station])
-    return riverandstation
+    return stationandriver
 
 
 def stations_within_radius(stations, centre, r):
