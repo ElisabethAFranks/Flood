@@ -13,8 +13,8 @@ Test_station = [MonitoringStation(
     typical_range = (1.2,1.5),
     river = 'River_test',
     town = 'test_town'), MonitoringStation(
-    station_id = 2,
-    measure_id = 20,
+    station_id =2,
+    measure_id =20,
     label = 'test_station_2',
     coord = (float(50), float(0)),
     typical_range = (15,2),
@@ -23,8 +23,8 @@ Test_station = [MonitoringStation(
 
 def test_stations_by_distance():
     assert len(geo.stations_by_distance(stations, (0,0))) > 0
-    assert round(geo.stations_by_distance(Test_station, (0,0))[0,2])==16
-
+    assert round(geo.stations_by_distance(Test_station, (0,0))[0,1])==16
+"""or 2???"""
 def test_rivers_with_station():
     assert len(geo.rivers_with_station (stations)) > 0
     assert geo.rivers_with_station(Test_station) == ['River_test']

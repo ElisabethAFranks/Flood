@@ -8,10 +8,12 @@ geographical data.
 from haversine import haversine
 from floodsystem.utils import sorted_by_key
 from floodsystem.station import MonitoringStation
+import numpy as np
 
 def stations_by_distance(stations, p):
     """function which returns a tuple of the station's name and the station's distance from point p"""
     stationanddistance = []
+    parray=np.asarray(p)
     for station in stations: 
         distance = float(haversine(p,station.coord()))
         stationanddistance.append(station.name,distance)
