@@ -46,15 +46,15 @@ def stations_by_river(stations):
 def stations_within_radius(stations, centre, r):
     """stations_within_radius(stations, centre, r) returns an alphabetical list of the stations within radius r of the coordinate, centre"""
     # Calls stations from previous function
-    stations_distance = stations_by_distance(stations, centre)
+    stations_dist1 = stations_by_distance(stations, centre)
 
     #create list of stations in radius
     stations_in_r = []
 
     #adds stations to stations_in_r
     for i, stations in enumerate(stations):
-        if stations_distance[i][2] < r:
-            stations_in_r.append(stations_distance[i][0])
+        if stations_dist1[i][2] < r:
+            stations_in_r.append(stations_dist1[i][0])
         else:
             break
     
@@ -65,7 +65,6 @@ def stations_within_radius(stations, centre, r):
 
 def rivers_by_station_number(stations, N):
     """rivers_by_station_number returns a list of tuples(river name, number of stations) sorted by number of stations for the first N rivers"""
-
     #use dictionary from stations_by_river(stations)
     stations_by_riv = stations_by_river(stations) 
 
