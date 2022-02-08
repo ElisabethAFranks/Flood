@@ -4,7 +4,7 @@ import floodsystem.geo as geo
 def run():
     """Requirements for Task 1E"""
 
-    # Build list of stations
+    # Build list of stations build them properly
     stations = build_station_list()
 
     print(geo.rivers_by_station_number(stations, 9))
