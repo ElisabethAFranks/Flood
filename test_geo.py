@@ -23,7 +23,7 @@ Test_station = [MonitoringStation(
 
 def test_stations_by_distance():
     assert len(geo.stations_by_distance(stations, (0,0))) > 0
-    assert round(geo.stations_by_distance(Test_station, (0,0))[0,1])==16
+    assert round(geo.stations_by_distance(Test_station, (0,0))[0][1])==16
 """or 2???"""
 def test_rivers_with_station():
     assert len(geo.rivers_with_station (stations)) > 0
