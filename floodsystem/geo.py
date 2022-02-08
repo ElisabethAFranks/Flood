@@ -13,7 +13,7 @@ def stations_by_distance(stations, p):
     """function which returns a tuple of the station's name and the station's distance from point p"""
     stationanddistance = []
     for station in stations: 
-        distance = float(haversine(p,station.coord))
+        distance = float(haversine(p,station.coord()))
         stationanddistance.append(station.name,distance)
     stationanddistance = sorted([(station.name, station.town, distance[i]) for i, station in enumerate(stations)], key = lambda x:x[2])
     return stationanddistance
