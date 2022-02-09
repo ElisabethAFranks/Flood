@@ -12,8 +12,8 @@ def run():
     # Build list of stations
     stations = build_station_list()
 
-    rivers = str(geo.rivers_with_station(stations))
-    print("There are " + len(rivers) + " rivers.")
+    rivers = geo.rivers_with_station(stations)
+    #put it back here orla ok!
     print(rivers[:10])
 
     riversandstations = geo.stations_by_river(stations)
