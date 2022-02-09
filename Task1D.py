@@ -13,7 +13,7 @@ def run():
     stations = build_station_list()
 
     rivers = geo.rivers_with_station(stations)
-    #put it back here orla ok!
+    #put it back here orla ok! print("There are " + len(rivers) + " rivers.") was the problem. issue was it couldnt conenctate an 'int' only a string. i tred str-ing the rivers list but it didn't like that either. let me knwow aht u wanna do elisabeth xx
     print(rivers[:10])
 
     riversandstations = geo.stations_by_river(stations)
