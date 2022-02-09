@@ -12,7 +12,7 @@ def run():
     # Build list of stations
     stations = build_station_list()
 
-    rivers = geo.rivers_with_station(stations)
+    rivers = str(geo.rivers_with_station(stations))
     print("There are " + len(rivers) + " rivers.")
     print(rivers[:10])
 
