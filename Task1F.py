@@ -6,8 +6,7 @@ def run():
     stations = build_station_list()
     print("There are %s stations with inconsistent typical range data." %len(inconsistent_typical_range_stations(stations)))
     print("they are %s" %inconsistent_typical_range_stations(stations))
-    # Build list of stations
-    
+
 
 if __name__ == "__main__":
     print("*** Task 1F: CUED Part IA Flood Warning System ***")
