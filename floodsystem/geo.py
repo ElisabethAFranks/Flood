@@ -13,7 +13,7 @@ def stations_by_distance(stations, p):
     """function which returns a tuple of the station's name and the station's distance from point p"""
     positions = np.array([station.coord for station in stations])
     distanceToP = 2 * 6371 * np.arcsin(np.sqrt((np.sin((np.deg2rad(p[0] - positions[:,0]))/2))**2 + np.cos(np.deg2rad(positions[:,0])) * np.cos(np.deg2rad(p[0])) * (np.sin((np.deg2rad(p[1] - positions[:,1]))/2))**2))
-    stationanddistance = sorted([(station, distanceToP[i]) for i, station in enumerate(stations)], key = lambda x:x[1])
+    stationanddistance = sorted([(station, distanceToP[i]) for i,station in enumerate(stations)], key = lambda x:x[1])
     return stationanddistance
 
 def rivers_with_station(stations):
