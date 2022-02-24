@@ -18,8 +18,9 @@ def run():
 
     # Print level history
 
-    for date, level in zip(dates, levels):
-        plot_water_levels(station, dates, levels)
+    for i in range(len(list_of_stations)):
+        dates[i], levels[i] = fetch_measure_levels(list_of_stations[i].measure_id, dt=datetime.timedelta(days=dt)
+        plot.plot_water_levels(list_of_stations[i],dates[i], levels[i])
 
 
 if __name__ == "__main__":
