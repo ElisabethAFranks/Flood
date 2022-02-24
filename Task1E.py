@@ -1,4 +1,4 @@
-from floodsystem.stationdata import build_station_list
+from floodsystem.stationdata import build_station_list, update_water_levels
 import floodsystem.geo as geo
 
 def run():

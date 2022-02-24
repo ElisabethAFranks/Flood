@@ -3,24 +3,22 @@ import string
 from turtle import st
 from unittest import skip
 import numpy as np
-
-from floodsystem.geo import stations_by_river
+from geo import stations_by_river
 from .utils import sorted_by_key  # noqa
-
-
+from stationdata import update_water_levels, build_station_list
+from flood import typical_range_consistent, relative_water_level
 
 def stations_level_over_threshold(stations,tol):
     list_of_stations_over_tol = []
-    for station in stations:
-        if station.typical_range_consistent() and station.relative_water_level() != None:
-            if station.relative_water_level() > tol:
-                list_of_stations_over_tol.append((station, station.relative_water_level()))
+    for i in stations:
+        if typical_range_consistent(i) and relative_water_level(i) != None:
+            if relative_water_level() > tol:
+                list_of_stations_over_tol.append((i, relative_water_level()))
     else:
         pass
     list_of_stations_over_tol = sorted(list_of_stations_over_tol, key = lambda x:-x[1])
     return list_of_stations_over_tol
 
-from floodsystem.stationdata import update_water_levels
 #2C
 def stations_highest_rel_level(stations, N):
     """stations_highest_rel_level(stations, N) returns a list of N stations in which the water level is closest to the maximum"""
