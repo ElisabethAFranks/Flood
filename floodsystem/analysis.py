@@ -1,6 +1,8 @@
 import numpy as np
 #import matplotlib.pyplot as plt
 import matplotlib
+from floodsystem.station import MonitoringStation
+import geo
 
 def polyfit(dates, levels, p):
     """returns a tuple of a numpy.poly1d object and a shift of the date axis"""
