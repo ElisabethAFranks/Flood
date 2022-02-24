@@ -1,4 +1,4 @@
-from floodsystem.station import MonitoringStation
+from station import MonitoringStation
 
 def stations_level_over_threshold(stations,tol):
     list_of_stations_over_tol = []
