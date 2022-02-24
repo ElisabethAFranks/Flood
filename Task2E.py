@@ -1,5 +1,4 @@
 import datetime
-
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.stationdata import build_station_list
 from floodsystem.plot import plot_water_levels
@@ -20,7 +19,7 @@ def run():
     # Print level history
 
     for date, level in zip(dates, levels):
-        plot_water_levels(station, dates, levels):
+        plot_water_levels(station, dates, levels)
 
 
 if __name__ == "__main__":
