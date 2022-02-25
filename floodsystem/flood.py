@@ -1,4 +1,4 @@
-from station import MonitoringStation
+from .station import MonitoringStation
 import string
 from turtle import st
 from unittest import skip
