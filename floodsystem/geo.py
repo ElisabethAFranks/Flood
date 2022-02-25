@@ -6,7 +6,7 @@ geographical data.
 
 """
 from .utils import sorted_by_key
-from station import MonitoringStation
+from .station import MonitoringStation
 import numpy as np
 
 def stations_by_distance(stations, p):

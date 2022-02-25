@@ -1,4 +1,4 @@
-from station import MonitoringStation
+from .station import MonitoringStation
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 
@@ -13,8 +13,6 @@ def plot_water_levels(station, dates, levels):
 
 from .analysis import polyfit
 import numpy as np
-
-
 
 def plot_water_levels(station, dates, levels):
     """plot_water_levels(station, dates, levels) input a Monitoring station a list of date objects and list of levels to plot
