@@ -6,14 +6,13 @@ import numpy as np
 from .geo import stations_by_river
 from .utils import sorted_by_key  # noqa
 from .stationdata import update_water_levels, build_station_list
-from .flood import typical_range_consistent, relative_water_level
 
 def stations_level_over_threshold(stations,tol):
     list_of_stations_over_tol = []
     for i in stations:
-        if typical_range_consistent(i) and relative_water_level(i) != None:
-            if relative_water_level() > tol:
-                list_of_stations_over_tol.append((i, relative_water_level()))
+        if MonitoringStation.typical_range_consistent(i) and MonitoringStation.relative_water_level(i) != None:
+            if MonitoringStation.relative_water_level(i) > tol:
+                list_of_stations_over_tol.append((i, MonitoringStation.relative_water_level()))
     else:
         pass
     list_of_stations_over_tol = sorted(list_of_stations_over_tol, key = lambda x:-x[1])
