@@ -15,8 +15,7 @@ def plot_water_levels(station, dates, levels):
     plt.tight_layout()
     plt.show()
 
-from analysis import polyfit
-import numpy as np
+
 
 def plot_water_levels(station, dates, levels):
     """plot_water_levels(station, dates, levels) input a Monitoring station a list of date objects and list of levels to plot
