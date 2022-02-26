@@ -21,7 +21,7 @@ def run():
         station = item[0]
             
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=2))
-        plot_water_level_with_fit(station, dates, levels, 4) 
+        plot_water_level_with_fit(station, dates, levels, 4)
 
 
 

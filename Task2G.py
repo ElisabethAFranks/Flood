@@ -28,13 +28,6 @@ def run():
             print(data)
 
 
-    """
-    flood_data = flood.assess_risk(stations)
-    for data in flood_data:
-        print(data[0], data[1], data [2])"""
-
-
-
 if __name__ == "__main__":
     print("*** Task 2G: CUED Part IA Flood Warning System ***")
     run()
