@@ -6,7 +6,6 @@ level the higher the assumed risk of flooding (if in flood flood level high)
 relative level, if the level is relatively high a similar equation is used
 """
 
-
 from floodsystem.stationdata import build_station_list, update_water_levels
 import floodsystem.flood as flood
 
