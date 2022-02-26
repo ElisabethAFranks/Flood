@@ -1,11 +1,12 @@
-from .station import MonitoringStation
+from station import MonitoringStation
 import string
 from turtle import st
 from unittest import skip
 import numpy as np
-from .geo import stations_by_river
-from .utils import sorted_by_key  # noqa
-from .stationdata import update_water_levels, build_station_list
+from geo import stations_by_river
+from utils import sorted_by_key  # noqa
+from stationdata import update_water_levels, build_station_list
+
 
 def stations_level_over_threshold(stations,tol):
     list_of_stations_over_tol = []
