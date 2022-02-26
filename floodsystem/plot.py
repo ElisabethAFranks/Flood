@@ -19,7 +19,6 @@ def plot_water_levels(station, dates, levels):
 
 
     
-
 def plot_water_level_with_fit(station, dates, levels, p):
     """plots water level data and best fit polynomial"""
 
@@ -30,7 +29,7 @@ def plot_water_level_with_fit(station, dates, levels, p):
         poly, d0 = polyfit(dates, levels, p)
 
         #format data
-        dates = plt.dates.date2num(dates) - d0    
+        dates = matplotlib.dates.date2num(dates) - d0    
         x1 = np.linspace(dates[0],dates[-1],30)
 
         #plot 
