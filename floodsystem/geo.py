@@ -3,11 +3,14 @@
 # SPDX-License-Identifier: MIT
 """This module contains a collection of functions related to
 geographical data.
-
 """
-from utils import sorted_by_key
-from station import MonitoringStation
+#from curses.ascii import NUL
 import numpy as np
+from .utils import sorted_by_key  # noqa
+
+from .station import MonitoringStation
+
+
 
 def stations_by_distance(stations, p):
     """function which returns a tuple of the station's name and the station's distance from point p"""
