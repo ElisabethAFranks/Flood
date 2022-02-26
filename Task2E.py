@@ -26,7 +26,7 @@ def run():
     
     # Fetch data over past 2 days
     dt = 10
-    dates = np.empty(noStations+1, dtype=object)
+    dates = np.empty(noStations, dtype=object)
     levels = [None, None ,None ,None ,None,None, None ,None ,None ,None]
     for i in range(len(station_list)):
         dates[i], levels[i] = fetch_measure_levels(
@@ -34,12 +34,6 @@ def run():
 
         plot.plot_water_levels(station_list[i], dates[i], levels[i])
     
-    plt.title("5 current highest")
-    plt.legend(loc="upper left")
-    plt.tight_layout()  # This makes sure plot does not cut off date labels
-    print("Showing Plot")
-    plt.show()
-
 
 if __name__ == "__main__":
     print("*** Task 2E: CUED Part IA Flood Warning System ***")
