@@ -13,23 +13,6 @@ import floodsystem.flood as flood
 import floodsystem.plot as plot
 import matplotlib.pyplot as plt
 
-"""
-def test_plot_water_level_with_fit():
-    
-    #create stations to test
-    stations = build_station_list()
-    update_water_levels(stations)
-    #Choose station to test
-    for station in stations:
-        if station.name == "Gaw Bridge":
-            station_to_test = station
-    #get data
-    dates, levels = fetch_measure_levels(station_to_test.measure_id, dt=datetime.timedelta(days=4))
-    poly, d0 = polyfit(dates, levels, 3)
-    #run tests
-    pass
-"""
-
 def test_plot_water_levels():
 
     stations = build_station_list()
