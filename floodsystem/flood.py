@@ -26,7 +26,7 @@ def stations_level_over_threshold(stations,tol):
     for i in stations:
         if MonitoringStation.typical_range_consistent(i) and MonitoringStation.relative_water_level(i) != None:
             if MonitoringStation.relative_water_level(i) > tol:
-                list_of_stations_over_tol.append((i, MonitoringStation.relative_water_level()))
+                list_of_stations_over_tol.append((i, MonitoringStation.relative_water_level(i)))
     else:
         pass
     list_of_stations_over_tol = sorted(list_of_stations_over_tol, key = lambda x:-x[1])
