@@ -3,9 +3,7 @@
 function returns the names of the rivers with monitoring stations without repeats 
 """
 
-from floodsystem.datafetcher import fetch_measure_levels, fetch_latest_water_level_data
 from floodsystem.stationdata import build_station_list, update_water_levels
-
 
 import floodsystem.flood as flood
 
