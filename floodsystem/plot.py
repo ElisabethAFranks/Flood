@@ -11,28 +11,12 @@ def plot_water_levels(station, dates, levels):
     plt.xlabel('date')
     plt.ylabel('water level (m)')
     plt.xticks(rotation=45);
-    plt.title("Station A")
+    plt.title(station.name)
     plt.tight_layout()
     plt.show()
 
 
 
-def plot_water_levels(station, dates, levels):
-    """plot_water_levels(station, dates, levels) input a Monitoring station a list of date objects and list of levels to plot
-    
-    This function does not plot.show()
-    """
-    # Plot
-    p = plt.plot(dates, levels, label=station.name)
-    color = p[0].get_color()
-    levelRange = station.typical_range
-
-    plt.axhline(y=levelRange[0],color=color, linestyle=':')
-    plt.axhline(y=levelRange[1],color=color,  linestyle='--')
-    # Add axis labels, rotate date labels and add plot title
-    plt.xlabel('date')
-    plt.ylabel('water level (m)')
-    plt.xticks(rotation=45);
 
     
 
